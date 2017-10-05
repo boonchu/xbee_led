@@ -1,12 +1,11 @@
 // This sketch will cause an XBee radio attached to the Arduino to
-// listen for requests from another XBee radio. It will take the
+// write requests to another XBee radio. Remote XBee will take the
 // payload received by the XBee and add it to a dynamically allocated
-// array of strings (character arrays). It will attempt to grow the 
-// array holding the strings as it adds them.
+// array of strings (character arrays). 
 
-// In order to use this sketch, the XBee radio (Series 1 used here)
+// In order to use this sketch, the XBee radio (Series 2 S2C used here)
 // must be setup to use API mode (AP=2 in X-CTU).
-// I use pins 2 and 3 here, but those can be changed in the defines
+// I use pins 4 and 5 here, but those can be changed in the defines
 // below.
 
 #include <XBee.h>
@@ -33,11 +32,10 @@ uint8_t d0Cmd[] = { 'D', '0' };
 uint8_t low_voltage[] = { 0x4 };
 uint8_t high_voltage[] = { 0x5 };
 
-// SH + SL of your remote radio
+// IMPORTANT NOTE: This line MUST be changed per SH + SL of your remote radio
 XBeeAddress64 remoteAddress = XBeeAddress64(0x0013a200, 0x414faf83);
 // Create a remote AT request with the IR command
 RemoteAtCommandRequest remoteAtRequest = RemoteAtCommandRequest(remoteAddress, irCmd, irValue, sizeof(irValue));
-
 // Create a Remote AT response object
 RemoteAtCommandResponse remoteAtResponse = RemoteAtCommandResponse();
 
