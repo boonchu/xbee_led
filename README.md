@@ -20,8 +20,8 @@
         XBee PIN 20: NPN Transistor base pin
 ```
 
-- no wiring changes from UNO
-- upload "coordinator2remote_at" to UNO
+- see breadboard pin wiring figure below
+- upload "xbee_led" to UNO
 
 ###### How it works:
 - coordinator XBee transmits data to remote XBee 
@@ -48,6 +48,8 @@ ATCN
 - the message status changes from HIGH to LOW or LOW to HIGH when D0 status change from
   remote radio end
 
-![ScreenShot](https://github.com/boonchu/arduino_projects/blob/xbee/xbee/coord2remote1.png)
+![ScreenShot](https://github.com/boonchu/arduino_projects/blob/xbee_led/master/NPN_2P2222_Switch.png)
 
-![ScreenShot](https://github.com/boonchu/arduino_projects/blob/xbee/xbee/coord2remote2.png)
+![ScreenShot](https://github.com/boonchu/arduino_projects/blob/xbee_led/master/XBee_PCB_design.png)
+
+![ScreenShot](https://github.com/boonchu/arduino_projects/blob/xbee_led/master/output.png)
